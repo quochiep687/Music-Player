@@ -240,6 +240,21 @@
                         audio.play()
                         _this.scrollToView()
                     }
+                    window.onkeydown = function(e) { 
+                        return !(e.code === 'Space');
+                    };
+                window.onkeyup = function(e) {
+            
+                    switch (e.code) {
+                        case 'ArrowRight': nextBtn.click()
+                        break
+                        case 'ArrowLeft': prevBtn.click()
+                        break
+                        case 'Space' : playBtn.click()
+                        break
+                    }
+                    
+                }
                     // xử lý prev songs
                 prevBtn.onclick = function() {
 
