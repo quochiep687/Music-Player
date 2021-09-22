@@ -89,6 +89,41 @@
                 })
             },
             songs: [{
+                    name: 'Late Night Melancholy',
+                    singer: 'Rude Boy & White Cherry',
+                    path: './assets/songs/song11.mp3',
+                    image: './assets/img/img11.jpg'
+                }, {
+                    name: 'Night Of The Piano',
+                    singer: 'Jin Shi',
+                    path: './assets/songs/song12.mp3',
+                    image: './assets/img/img12.jpg'
+                }, {
+                    name: 'Fiction',
+                    singer: 'Instrumental',
+                    path: './assets/songs/song13.mp3',
+                    image: './assets/img/img13.jpg'
+                }, {
+                    name: 'Letter',
+                    singer: 'Iris',
+                    path: './assets/songs/song14.mp3',
+                    image: './assets/img/img14.jpg'
+                }, {
+                    name: 'Counter Clockwise',
+                    singer: 'Asphyxia',
+                    path: './assets/songs/song15.mp3',
+                    image: './assets/img/img15.jpg'
+                }, {
+                    name: 'Instrumental',
+                    singer: 'Leessang',
+                    path: './assets/songs/song16.mp3',
+                    image: './assets/img/img16.jpg'
+                }, {
+                    name: 'Astronomia',
+                    singer: 'Jiaye Bootleg',
+                    path: './assets/songs/song17.mp3',
+                    image: './assets/img/img17.jpg'
+                }, {
                     name: 'I Love You 3000',
                     singer: 'Stephanie Poetri',
                     path: './assets/songs/song1.mp3',
@@ -231,30 +266,33 @@
                     }
                     // xử lý next songs
                 nextBtn.onclick = function() {
-                        if (_this.isRandom) {
-                            _this.randomSong()
-                        } else {
-                            _this.nextSong()
+                    if (_this.isRandom) {
+                        _this.randomSong()
+                    } else {
+                        _this.nextSong()
+                    }
+
+                    audio.play()
+                    _this.scrollToView()
+                }
+                window.onkeydown = function(e) {
+                    return !(e.code === 'Space');
+                };
+                window.onkeyup = function(e) {
+
+                        switch (e.code) {
+                            case 'ArrowRight':
+                                nextBtn.click()
+                                break
+                            case 'ArrowLeft':
+                                prevBtn.click()
+                                break
+                            case 'Space':
+                                playBtn.click()
+                                break
                         }
 
-                        audio.play()
-                        _this.scrollToView()
                     }
-                    window.onkeydown = function(e) { 
-                        return !(e.code === 'Space');
-                    };
-                window.onkeyup = function(e) {
-            
-                    switch (e.code) {
-                        case 'ArrowRight': nextBtn.click()
-                        break
-                        case 'ArrowLeft': prevBtn.click()
-                        break
-                        case 'Space' : playBtn.click()
-                        break
-                    }
-                    
-                }
                     // xử lý prev songs
                 prevBtn.onclick = function() {
 
